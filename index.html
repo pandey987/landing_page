@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Fitness</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    /* css reset */
+
+    body {
+        font-family: 'Playfair', serif;
+        color: rgb(247, 242, 242);
+        margin: 0px;
+        padding: 0px;
+
+
+        background: url("https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        /*write address*/
+        background-size: cover;
+    }
+
+    .left {
+        display: inline-block;
+        /* border: 2px solid rgb(121, 17, 17); */
+        position: absolute;
+        left: 60px;
+        top: 22px;
+
+    }
+
+    .mid {
+        display: block;
+        width: 40%;
+        margin: 32px auto;
+        /* border: 2px solid rgb(11, 153, 89); */
+    }
+
+    .right {
+        display: inline-block;
+        position: absolute;
+        right: 22px;
+        top: 42px;
+        /* border: 2px solid rgb(34, 9, 105); */
+    }
+
+    .navbar {
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+
+    }
+
+    .navbar li a {
+        color: white;
+        padding: 34px 20px;
+        font-size: 20px;
+    }
+
+
+    .navbar li a:hover,
+    .navbar li a.active {
+        text-decoration: underline;
+        color: gray;
+    }
+
+    .left img {
+        width: 105px;
+        filter: invert(100%);
+    }
+
+    .left div {
+        font-size: 14px;
+        text-align: center;
+        position: absolute;
+        bottom: 10px;
+    }
+
+    .btn {
+        font-family: 'Playfair', serif;
+        margin: auto;
+        background-color: black;
+        color: white;
+        padding: 4px 16px;
+        /* border: 2px solid green; */
+        border-radius: 10px;
+        font-size: 17px;
+        cursor: pointer;
+        /*to convert into hand*/
+    }
+
+    .btn:hover {
+        background-color: rgb(26, 25, 25);
+    }
+
+    .container {
+
+        border: 2px solid white;
+        margin: 123px 128px;
+        padding: 75px;
+        width: 33%;
+        border-radius: 34px;
+    }
+
+    .form-group input {
+        font-family: 'Playfair', serif;
+        text-align: center;
+        display: block;
+        width: 500px;
+        font-size: 24px;
+        padding: 2px;
+        /* border: 2px solid rgb(15, 202, 90); */
+        border-radius: 9px;
+        margin: 10px auto;
+    }
+
+    .container .btn {
+        display: block;
+        width: 100%;
+        margin: 22px auto;
+        font-size: 21px;
+    }
+
+    .container h1 {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <header class="header">
+        <!-- left box for logo -->
+        <div class="left">
+            <img src="data:image/png;base64,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"
+                alt="">
+            <div>Ultimate Fitness</div>
+        </div>
+        <!-- mid box for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Fitness Center</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- right box for botton -->
+        <div class="right">
+            <button class="btn">Call Us Now</button><button class="btn">Email Us</button>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Join the Best gym of Indore now</h1>
+        <form action="noaction.php">
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Name">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Age">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Your Gender">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Your Address">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Your Mobile Number">
+            </div>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
